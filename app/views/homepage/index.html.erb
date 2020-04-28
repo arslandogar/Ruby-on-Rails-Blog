@@ -57,12 +57,16 @@
   <% else %>
   <% @active = "" %>
   <% end %>
+  
     <div class="carousel-item <%= @active %>" data-interval="10000">
+    <a href=<%= post_path(post.id) %>>
       <img src=<%= post.image_url %> class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5><%= post.title%></h5>
       </div>
+      </a>
     </div>
+    
   <% end %>
   </div>
   </div>
