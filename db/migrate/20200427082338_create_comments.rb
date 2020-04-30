@@ -6,6 +6,5 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.belongs_to :post, index: { unique: false }, foreign_key: true
       t.timestamps
     end
-    add_column :users, :name, :string, null: false
   end
 end

@@ -1,0 +1,7 @@
+<%= form_for :comment, url: posts_path do |form| %>
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_area :content%>
+  </div>
+  <%= form.hidden_field :post_id %>
+<% end %>

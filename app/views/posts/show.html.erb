@@ -23,22 +23,24 @@
       <div class="card my-4">
         <h5 class="card-header">Leave a Comment:</h5>
         <div class="card-body">
-          <form>
+          <%= form_for :comment, url: comments_path(post_id: @post.id) do |form| %>
             <div class="form-group">
-              <textarea class="form-control" rows="3"></textarea>
+              <%= form.text_area :content, class: 'form-control' %>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          <% end %>
         </div>
       </div>
       <!-- Single Comment -->
-      <div class="media mb-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">Commenter Name</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      <% @comments.each do |comment| %>
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0"><%= comment.user.name %></h5>
+            <p><%= comment.content %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
