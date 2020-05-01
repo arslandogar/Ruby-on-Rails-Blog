@@ -7,9 +7,9 @@ class PostsController < ApplicationController
     puts params
     puts "done"
     if params[:title] == nil
-      @posts = Post.all
+      @posts = Post.all.paginate(page: params[:page], per_page: 5)
     else
-      @posts = Post.search_by_title(params[:title])
+      @posts = Post.search_by_title(params[:title]).paginate(page: params[:page], per_page: 5)
     end
   end
   def new
