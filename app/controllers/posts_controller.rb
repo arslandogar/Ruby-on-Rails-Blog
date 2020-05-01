@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   
+
+  def index
+    puts "here are paras"
+    puts params
+    puts "done"
+    if params[:title] == nil
+      @posts = Post.all
+    else
+      @posts = Post.search_by_title(params[:title])
+    end
+  end
   def new
     @post = current_user.posts.new
   end
