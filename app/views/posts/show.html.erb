@@ -9,6 +9,13 @@
         by
         <a href="#"><%= @post.user.name %></a>
       </p>
+      <% if can? :manage, @post %>
+        <span class="">
+          <a href=<%= edit_post_path(@post.id) %>>Edit</a>
+          <span> | </span>
+          <a href="#">Delete</a>
+        </span>
+      <% end %>
       <hr>
       <!-- Date/Time -->
       <p>Posted on <%= @post.created_at %></p>
