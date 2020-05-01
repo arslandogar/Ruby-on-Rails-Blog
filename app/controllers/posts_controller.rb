@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.all
+    @comments = @post.comments.all.order(created_at: :desc)
   end
 
   def destroy
