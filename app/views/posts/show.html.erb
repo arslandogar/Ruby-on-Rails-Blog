@@ -13,7 +13,7 @@
         <span class="">
           <a href=<%= edit_post_path(@post.id) %>>Edit</a>
           <span> | </span>
-          <a href="#">Delete</a>
+          <%= link_to "Delete", post_path(@post), :confirm => "Are you sure?", :method => :delete %>
         </span>
       <% end %>
       <hr>
