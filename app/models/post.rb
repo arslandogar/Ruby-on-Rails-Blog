@@ -3,7 +3,7 @@ class Post < ApplicationRecord
     validates :description, presence: true
     mount_uploader :image, PostImageUploader
     belongs_to :user
-    has_many :comments
+    has_many :comments, dependent: :destroy
     include PgSearch::Model
     pg_search_scope :search_by_title, against: :title
 end
