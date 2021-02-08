@@ -7,7 +7,7 @@ gem 'devise'
 gem "devise-async"
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'pg_search'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap4'
